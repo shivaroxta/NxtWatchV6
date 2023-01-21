@@ -13,52 +13,13 @@ const App = () => (
   <BrowserRouter>
     <Routes>
       <Route exact path="/login" element={<Login />} />
-
-      <Route
-        exact
-        path="/"
-        element={
-          <ProtectedRoute>
-            <Home />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        exact
-        path="/trending"
-        element={
-          <ProtectedRoute>
-            <Trending />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        exact
-        path="/gaming"
-        element={
-          <ProtectedRoute>
-            <Gaming />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        exact
-        path="/videos/:id"
-        element={
-          <ProtectedRoute>
-            <VideoItemDetails />
-          </ProtectedRoute>
-        }
-      />
-      <Route
-        exact
-        path="/saved"
-        element={
-          <ProtectedRoute>
-            <SavedVideos />
-          </ProtectedRoute>
-        }
-      />
+      <Route element={<ProtectedRoute />}>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/trending" element={<Trending />} />
+        <Route exact path="/gaming" element={<Gaming />} />
+        <Route exact path="/videos/:id" element={<VideoItemDetails />} />
+        <Route exact path="/saved" element={<SavedVideos />} />
+      </Route>
     </Routes>
   </BrowserRouter>
 )
