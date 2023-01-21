@@ -1,0 +1,34 @@
+.filter-groups {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 10vh;
+  width: 10vw;
+  min-width: 200px;
+}
+.sites {
+  display: flex;
+  flex-direction: row;
+}
+.contact-us {
+  font-size: 10px;
+}
+.site {
+  height: 40px;
+}
+.icon {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+.item {
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  text-align: left;
+}
+.active {
+  background-color: #f1f5f9;
+  min-width: 100px;
+  max-width: 150px;
+}

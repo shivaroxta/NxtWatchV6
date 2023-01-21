@@ -1,0 +1,44 @@
+.trending-container {
+  display: flex;
+  flex-direction: column;
+}
+.trending {
+  display: flex;
+}
+.trending-icon {
+  display: flex;
+  flex-direction: row;
+  background-color: #f1f1f1;
+  margin-left: 100px;
+  width: 80vw;
+}
+.item-top {
+  margin-top: 30px;
+}
+.trending-elements {
+  background-color: #f8fafc;
+  max-height: 100vh;
+  margin-left: 100px;
+}
+.trending-icon-top {
+  width: 200px;
+  height: 100px;
+  border-radius: 100px;
+  background-color: #f1f5f9;
+}
+.trending-elements {
+  display: flex;
+  flex-direction: column;
+}
+.trending-video-item-image {
+  height: 30vh;
+}
+.trending-video-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  height: 32vh;
+}
+.trending-video-details {
+  height: 32vh;
+}

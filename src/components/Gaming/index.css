@@ -1,0 +1,43 @@
+.gaming-videos-item {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  width: 350px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.gaming-video-image {
+  height: 200px;
+  width: 200px;
+}
+.gaming-videos-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.gaming-videos-header {
+  font-size: 10px;
+}
+.gaming-container {
+  display: flex;
+  flex-direction: column;
+}
+.gaming {
+  display: flex;
+}
+.gaming-icon {
+  display: flex;
+  flex-direction: row;
+  background-color: #f1f1f1;
+  margin-left: 100px;
+  width: 80vw;
+}
+.items-top {
+  margin-top: 30px;
+}
+.gaming-elements {
+  background-color: #f8fafc;
+  max-height: 100vh;
+  margin-left: 100px;
+}
