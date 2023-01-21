@@ -6,6 +6,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Sidebar from '../Sidebar'
 // AiOutlineSearch
 import Header from '../Header'
+import ThemeContext from '../Context'
 import './index.css'
 
 const apiStatusConstants = {
@@ -134,11 +135,12 @@ const Home = () => {
         return null
     }
   }
-
+  const themes = Cookies.get('theme')
+  console.log(themes)
   return (
     <>
       <Header />
-      <div className="home">
+      <div className={`home ${themes}`}>
         <Sidebar />
         <div className="home-container">
           <div className="logo-search">

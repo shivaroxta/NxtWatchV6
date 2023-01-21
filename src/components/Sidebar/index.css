@@ -28,7 +28,12 @@
   text-align: left;
 }
 .active {
-  background-color: #f1f5f9;
+  color: red;
   min-width: 100px;
   max-width: 150px;
+
+  text-decoration: none;
+}
+.nav-link {
+  text-decoration: none;
 }

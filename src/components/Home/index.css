@@ -89,3 +89,9 @@
 .videos-home-list {
   min-height: 70vh;
 }
+.light {
+  background-color: white;
+}
+.dark {
+  background-color: black;
+}

@@ -1,10 +1,13 @@
 import {NavLink} from 'react-router-dom'
+
 // eslint-disable-next-line
 import {useState, useEffect} from 'react'
+
 import {MdPlaylistAdd} from 'react-icons/md'
 import {SiYoutubegaming} from 'react-icons/si'
 import {HiFire} from 'react-icons/hi'
 import {AiFillHome} from 'react-icons/ai'
+
 import './index.css'
 
 const Sidebar = () => (
@@ -12,7 +15,7 @@ const Sidebar = () => (
     <ul className="filter">
       <NavLink
         to="/"
-        style={{textDecoration: 'none', color: 'inherit'}}
+        // style={{textDecoration: 'none', color: 'inherit'}}
         className={({isActive}) => (isActive ? 'nav-link active' : 'nav-link')}
       >
         <ul className="icon">
@@ -28,7 +31,6 @@ const Sidebar = () => (
       </NavLink>
       <NavLink
         to="/trending"
-        style={{textDecoration: 'none', color: 'inherit'}}
         className={({isActive}) => (isActive ? 'nav-link active' : 'nav-link')}
       >
         <ul className="icon">
@@ -44,7 +46,6 @@ const Sidebar = () => (
       </NavLink>
       <NavLink
         to="/gaming"
-        style={{textDecoration: 'none', color: 'inherit'}}
         className={({isActive}) => (isActive ? 'nav-link active' : 'nav-link')}
       >
         <ul className="icon">
@@ -61,7 +62,6 @@ const Sidebar = () => (
 
       <NavLink
         to="/saved"
-        style={{textDecoration: 'none', color: 'inherit'}}
         className={({isActive}) => (isActive ? 'nav-link active' : 'nav-link')}
       >
         <ul className="icon">

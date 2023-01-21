@@ -1,4 +1,5 @@
-import {useState, useNavigate} from 'react'
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import './index.css'
 
