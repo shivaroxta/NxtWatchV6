@@ -68,7 +68,7 @@ const Gaming = () => {
   const renderGamingVideosListView = () => (
     <ul className="gaming-videos-list">
       {gamingVideos.map(eachItems => (
-        <Link to={`videos/${eachItems.id}`}>
+        <Link to={`/videos/${eachItems.id}`}>
           <li className="gaming-videos-item" key={eachItems.id}>
             <img
               src={eachItems.thumbnailUrl}

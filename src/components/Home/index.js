@@ -81,7 +81,7 @@ const Home = () => {
     return shouldShowProductsList ? (
       <ul className="videos-playlist">
         {videosList.map(eachVideo => (
-          <NavLink to={`videos/${eachVideo.id}`}>
+          <NavLink to={`/videos/${eachVideo.id}`}>
             <li className="video-item" key={eachVideo.id}>
               <img
                 src={eachVideo.thumbnailUrl}

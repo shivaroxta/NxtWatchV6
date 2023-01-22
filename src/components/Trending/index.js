@@ -70,7 +70,7 @@ const Trending = () => {
   const renderVideosListView = () => (
     <ul className="trending-videos-list">
       {trendingVideos.map(eachItem => (
-        <NavLink to={`videos/${eachItem.id}`}>
+        <NavLink to={`/videos/${eachItem.id}`}>
           <li className="trending-video-item" key={eachItem.id}>
             <div className="trending-video-image">
               <img
