@@ -38,6 +38,14 @@
 }
 .gaming-elements {
   background-color: #f8fafc;
-  max-height: 100vh;
+  min-height: 100vh;
   margin-left: 100px;
+}
+
+.light {
+  background-color: white;
+}
+.dark-mode {
+  background-color: black;
+  color: white;
 }

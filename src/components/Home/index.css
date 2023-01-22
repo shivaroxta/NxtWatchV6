@@ -92,6 +92,10 @@
 .light {
   background-color: white;
 }
-.dark {
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.dark-mode website-home-banner {
   background-color: black;
 }

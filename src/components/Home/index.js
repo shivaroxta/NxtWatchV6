@@ -1,12 +1,15 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
+
 import {NavLink} from 'react-router-dom'
 import Cookies from 'js-cookie'
+
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
+import DarkModeContext from '../../context/DarkModeContext'
 import Sidebar from '../Sidebar'
 // AiOutlineSearch
 import Header from '../Header'
-import ThemeContext from '../Context'
+
 import './index.css'
 
 const apiStatusConstants = {
@@ -19,6 +22,7 @@ const Home = () => {
   const [videosList, setVideosList] = useState([])
   const [searchBarEl, setSearchBarEl] = useState('')
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
+  const {darkMode} = useContext(DarkModeContext)
 
   const getVideoItems = async () => {
     setApiStatus(apiStatusConstants.inProgress)
@@ -135,12 +139,11 @@ const Home = () => {
         return null
     }
   }
-  const themes = Cookies.get('theme')
-  console.log(themes)
+
   return (
     <>
       <Header />
-      <div className={`home ${themes}`}>
+      <div className={`home ${darkMode ? 'dark-mode' : ''}`}>
         <Sidebar />
         <div className="home-container">
           <div className="logo-search">

@@ -4,6 +4,8 @@
 }
 .trending {
   display: flex;
+  min-height: 100vh;
+  max-height: 1000vh;
 }
 .trending-icon {
   display: flex;
@@ -17,7 +19,7 @@
 }
 .trending-elements {
   background-color: #f8fafc;
-  max-height: 100vh;
+  min-height: 100vh;
   margin-left: 100px;
 }
 .trending-icon-top {
@@ -41,4 +43,11 @@
 }
 .trending-video-details {
   height: 32vh;
+}
+.light-mode {
+  background-color: white;
+}
+.dark-mode {
+  background-color: black !important;
+  color: white !important;
 }

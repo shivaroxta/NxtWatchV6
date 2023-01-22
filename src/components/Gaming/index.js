@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {SiYoutubegaming} from 'react-icons/si'
 import {Link} from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -7,6 +7,7 @@ import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
+import DarkModeContext from '../../context/DarkModeContext'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -18,6 +19,7 @@ const apiStatusConstants = {
 const Gaming = () => {
   const [gamingVideos, setGamingVideos] = useState([])
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
+  const {darkMode} = useContext(DarkModeContext)
 
   const getGamingVideos = async () => {
     setApiStatus(apiStatusConstants.inProgress)
@@ -97,7 +99,7 @@ const Gaming = () => {
   return (
     <>
       <Header />
-      <div className="gaming">
+      <div className={`gaming ${darkMode ? 'dark-mode' : ''}`}>
         <Sidebar />
 
         <div className="gaming-container">
@@ -115,7 +117,9 @@ const Gaming = () => {
               Gaming
             </p>
           </div>
-          <div className="gaming-elements">{renderAllGamingVideos()}</div>
+          <div className={`gaming-elements ${darkMode ? 'dark-mode' : ''}`}>
+            {renderAllGamingVideos()}
+          </div>
         </div>
       </div>
     </>

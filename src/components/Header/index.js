@@ -1,13 +1,14 @@
 import {useNavigate} from 'react-router-dom'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {FaMoon} from 'react-icons/fa'
 import Cookies from 'js-cookie'
 import {CgProfile} from 'react-icons/cg'
-import ThemeContext from '../Context'
 
+import DarkModeContext from '../../context/DarkModeContext'
 import './index.css'
 
 const Header = () => {
+  const {darkMode, setDarkMode} = useContext(DarkModeContext)
   const navigate = useNavigate()
 
   const onClickLogout = () => {
@@ -19,19 +20,12 @@ const Header = () => {
     navigate.replace('/')
   }
 
-  const [theme, setTheme] = useState('light')
-  Cookies.set('themeMode', theme, {expires: 30})
-
   const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark')
-    } else {
-      setTheme('light')
-    }
-    console.log(theme)
+    setDarkMode(!darkMode)
   }
+
   return (
-    <div className="header-container">
+    <div className={`header-container ${darkMode ? 'dark-mode' : ''}`}>
       <div className="header-image">
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png"

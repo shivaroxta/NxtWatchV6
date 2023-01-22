@@ -37,9 +37,10 @@ dark-theme .button-logout {
   background-color: black;
   color: white;
 }
-.light {
+.light-mode {
   background-color: white;
 }
-.dark {
+.dark-mode {
   background-color: black;
+  color: white;
 }

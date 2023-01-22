@@ -1,12 +1,12 @@
 import {HiFire} from 'react-icons/hi'
-import {useState, useEffect} from 'react'
-import {Link} from 'react-router-dom'
+import {useState, useEffect, useContext} from 'react'
+import {NavLink} from 'react-router-dom'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Header from '../Header'
 import Sidebar from '../Sidebar'
-
+import DarkModeContext from '../../context/DarkModeContext'
 import './index.css'
 
 const apiStatusConstants = {
@@ -19,6 +19,7 @@ const apiStatusConstants = {
 const Trending = () => {
   const [trendingVideos, setTrendingVideos] = useState([])
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial)
+  const {darkMode} = useContext(DarkModeContext)
 
   const getTrendingVideos = async () => {
     setApiStatus(apiStatusConstants.inProgress)
@@ -36,6 +37,7 @@ const Trending = () => {
     if (response.ok === true) {
       const fetchedData = await response.json()
       const updatedData = fetchedData.videos.map(eachVideo => ({
+        id: eachVideo.id,
         title: eachVideo.title,
         thumbnailUrl: eachVideo.thumbnail_url,
         channelName: eachVideo.channel.name,
@@ -68,7 +70,7 @@ const Trending = () => {
   const renderVideosListView = () => (
     <ul className="trending-videos-list">
       {trendingVideos.map(eachItem => (
-        <Link to={`videos/${eachItem.id}`}>
+        <NavLink to={`videos/${eachItem.id}`}>
           <li className="trending-video-item" key={eachItem.id}>
             <div className="trending-video-image">
               <img
@@ -88,7 +90,7 @@ const Trending = () => {
               <p className="trending-video-date">{eachItem.publishedAt}</p>
             </div>
           </li>
-        </Link>
+        </NavLink>
       ))}
     </ul>
   )
@@ -115,7 +117,7 @@ const Trending = () => {
   return (
     <>
       <Header />
-      <div className="trending">
+      <div className={`trending ${darkMode ? 'dark-mode' : ''}`}>
         <Sidebar />
 
         <div className="trending-container">
@@ -133,7 +135,9 @@ const Trending = () => {
               Trending
             </p>
           </div>
-          <div className="trending-elements">{renderAllTrendingElements()}</div>
+          <div className={`trending-elements ${darkMode ? 'dark-mode' : ''}`}>
+            {renderAllTrendingElements()}
+          </div>
         </div>
       </div>
     </>
